@@ -1,9 +1,9 @@
 # Simulasi Komunikasi Dua Arah dengan Enkripsi DES
 
-**Mata Kuliah:** Keamanan Informasi
-**Nama:** Shifa Alya Dewi
-**NRP:** 5025241176
 
+| Nama | Shifa Alya Dewi |
+| NRP | 5025241176 |
+| Mata Kuliah | Keamanan Informasi |
 ---
 
 ## 1. Deskripsi
