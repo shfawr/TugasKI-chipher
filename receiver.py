@@ -14,17 +14,22 @@ def recv_message(sock):
     return data[:-1]
 
 def send_message(sock, payload):
-    sock.sendall(payload + b'\n')
+    sock.sendall(payload.hex().encode() + b'\n')
 
 def receive_loop(sock):
-    while True:
-        ciphertext = recv_message(sock)
-        if not ciphertext:
+    while 1:
+        data = recv_message(sock)
+        if not data:
             print("putus")
             break
-        print("cipher :", ciphertext.hex())
         try:
-            print("asli   :", decrypt(ciphertext, SHARED_KEY))
+            cipher = bytes.fromhex(data.decode())
+        except:
+            print("data rusak")
+            continue
+        print("cipher :", cipher.hex())
+        try:
+            print("asli   :", decrypt(cipher, SHARED_KEY))
         except:
             print("gagal decrypt")
         print("> ", end='', flush=True)
